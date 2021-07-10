@@ -39,12 +39,6 @@ public class DbConfig {
 		return dataSource;
 	}
 
-	@Bean
-	public SessionFactory sessionFactory() {
-		return new LocalSessionFactoryBuilder(getDataSource()).addAnnotatedClasses(Book.class)
-				.addAnnotatedClass(BookLoans.class).addAnnotatedClass(Borrower.class).addAnnotatedClass(Fines.class)
-				.addAnnotatedClass(Authors.class).buildSessionFactory();
-	}
 
 	@Bean
 	public HibernateTransactionManager hibTransMan() {
